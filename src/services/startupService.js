@@ -14,7 +14,8 @@ export const startServer = async (app, port) => {
         await transporter.verify();
         console.log('Email service connected and ready.');
     } catch (emailError) {
-        console.error('Email service not reachable:', emailError.message);
+        console.error('Email service not reachable:', emailError);
+        process.exit(1);
     }
 
     try {
