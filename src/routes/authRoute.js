@@ -31,7 +31,7 @@ router.post('/admin/signup', authenticate, authorize(['admin']), async (req, res
 
     const SALT_ROUNDS = 12;
     const hashedPassword = await bcrypt.hash(generatedPassword, SALT_ROUNDS);
-    // const result = await signup(username, email, hashedPassword, 'admin');
+    const result = await signup(username, email, hashedPassword, 'admin');
     
     // To send mail with login details 
     
