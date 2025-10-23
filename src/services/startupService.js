@@ -10,13 +10,15 @@ export const startServer = async (app, port) => {
         process.exit(1);
     }
 
-    try {
-        await transporter.verify();
-        console.log('Email service connected and ready.');
-    } catch (emailError) {
-        console.error('Email service not reachable:', emailError);
-        process.exit(1);
-    }
+    // To check mail service is working or not 
+    
+    // try {
+    //     await transporter.verify();
+    //     console.log('Email service connected and ready.');
+    // } catch (emailError) {
+    //     console.error('Email service not reachable:', emailError);
+    //     process.exit(1);
+    // }
 
     try {
         app.listen(port, () => {
