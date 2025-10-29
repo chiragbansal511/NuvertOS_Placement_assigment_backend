@@ -29,7 +29,7 @@ router.post('/admin/signup', authenticate, authorize(['admin']), async (req, res
 
     const generatedPassword = generateRandomPassword(12); // change length if you want
 
-    const SALT_ROUNDS = 12;
+    const SALT_ROUNDS = 10;
     const hashedPassword = await bcrypt.hash(generatedPassword, SALT_ROUNDS);
     const result = await signup(username, email, hashedPassword, 'admin');
     
